@@ -5,4 +5,12 @@ const conselhos = [
     "Supere seus limites.",
     "Tenha objetivos claros e lute por eles."
 ];
-console.log("Arquivo de script carregado. array de conselhos pronto.");
+const conselhoTexto = document.getElementById('conselhoTexto');
+const novoConselhoBtn = document.getElementById('novoConselhoBtn');
+
+function gerarConselho() {
+    //bug proposital
+    const indice = Math.floor(Math.random() * (conselhos.length + 1));
+    conselhoTexto.textContent = conselhos(indice);
+}
+novoConselhoBtn.addEventListener('click', gerarConselho);
